@@ -1,5 +1,6 @@
 import SignupView from './../views/signup';
 import LoginView from './../views/login';
+import AuthRequest from './../models/AuthRequest';
 
 export default Backbone.Router.extend({
   routes: {
@@ -18,8 +19,9 @@ export default Backbone.Router.extend({
     $('.container').html(signupView.el);
   },
   login: function() {
-    var loginView = new LoginView();
-    loginView.render();
-    $('.container').html(loginView.el);
+    var loginView = new LoginView({
+      model: new AuthRequest()
+    });
+    $('.container').html(loginView.render().el);
   }
 });
