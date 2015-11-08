@@ -1,0 +1,27 @@
+{
+  "name": "twittar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "jshint scripts/*/*.js",
+    "build": "browserify scripts/main.js -o dist/main.js -t [ babelify --presets [ es2015 ] ]",
+    "prebuild": "npm run-script lint",
+    "watch": "watch 'npm run build' scripts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.8.29",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "jshint": "^2.8.0",
+    "watch": "^0.16.0"
+  },
+  "jshintConfig": {
+    "esnext": true
+  },
+  "presets": [
+    "es2015"
+  ]
+}
