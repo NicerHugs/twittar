@@ -1,6 +1,6 @@
 import Router from './router/router';
 
 $('document').ready(function() {
-  new Router();
+  window.twittarRouter = new Router();
   Backbone.history.start();
 });
