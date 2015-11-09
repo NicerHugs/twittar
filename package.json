@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "lint": "jshint scripts/*/*.js",
-    "build": "browserify scripts/main.js -o dist/main.js -t [ babelify --presets [ es2015 ] ]",
+    "build:scripts": "browserify scripts/main.js -o dist/main.js -t [ babelify --presets [ es2015 ] ]",
+    "build:css": "node-sass styles/main.scss dist/main.css",
+    "build": "npm run-script build:scripts && npm run-script build:css",
     "prebuild": "npm run-script lint",
-    "watch": "watch 'npm run build' scripts"
+    "watch": "watch 'npm run build' scripts styles"
   },
   "author": "",
   "license": "ISC",
