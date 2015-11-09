@@ -10,13 +10,26 @@
 
     </div>
 
-    <script type="text/tempate" id="signup-template">
+    <script type="text/template" id="tweet-template">
+      <header class="tweet-meta-data">
+        <section class="author"><%= user.email %>
+        <time><%= created_at %></time>
+      </header>
+      <p><%= body %></p>
+    </script>
+
+    <script type="text/template" id="tweets-template">
+      <input type="text" name="body" placeholder="type your twit" id="twit-input">
+      <ul class="tweets"></ul>
+    </script>
+
+    <script type="text/template" id="signup-template">
       <input type="text" placeholder="email" name="email" id="signup-email">
       <input type="password" placeholder="password" name="password" id="signup-password">
       <input type="submit" value="Sign Up">
     </script>
 
-    <script type="text/tempate" id="login-template">
+    <script type="text/template" id="login-template">
       <input type="text" placeholder="email" name="email" id="login-email">
       <input type="password" placeholder="password" name="password" id="login-password">
       <input type="submit" value="Log In">
